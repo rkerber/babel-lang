@@ -1,0 +1,113 @@
+"Name"    = 'Babel' 
+"Version" = '1'
+"Author"  = 'Bryan Livingston' 
+"About"   = 'Babel is a formal grammar for representing thoughts and the meaning of human languages.'
+
+"Case Sensitive" = True
+"Start Symbol"   = <Sentance Set>
+
+
+! ===================================================================
+! Terminals
+! ===================================================================
+
+{Upper Letter}    = [ABCDEFGHIJKLMNOPQRSTUVWXYZ]
+{Lower Letter}    = [abcdefghijklmnopqrstuvwxyz]
+
+{Word Tail}        = {Letter} + {Digit}
+
+Word               = {Lower Letter}{Word Tail}*
+CapitalizedWord    = {Upper Letter}{Word Tail}*
+
+
+! ===================================================================
+! Comments
+! ===================================================================
+
+Comment Start = '/*'
+Comment End   = '*/'
+Comment Line  = '//'
+
+
+! ===================================================================
+! Base Symbols
+! ===================================================================
+
+<Sentance Set> ::= <Sentance> ';' <Sentance Set>
+	| <Sentance> ';'
+
+<Sentance> ::= <Verb Phrase>
+	  | <Declaration>
+	  | <Class Declaration>
+
+<Declaration> ::= <Noun Set> '.' <Adjective>
+
+<Class Declaration> ::= <Noun Set> '.' <Noun Set>
+	
+<Phrase> ::= <Sentance>
+	| <Noun Set>
+	| <Adjective>
+
+
+! ===================================================================
+! Nouns
+! ===================================================================
+
+<Noun Set> ::= <Noun Phrase>
+	| <Noun And Set>
+	| <Noun Or Set>
+	
+<Noun And Set> ::= <Noun Phrase> '&' <Noun Phrase>
+	| <Noun Phrase> '&' <Noun And Set>
+
+<Noun Or Set> ::= <Noun Phrase> '|' <Noun Phrase>
+	| <Noun Phrase> '|' <Noun Or Set>
+
+<Noun> ::= CapitalizedWord
+	| CapitalizedWord <Noun Suffix Set>
+
+<Noun Suffix> ::= '*'		! Plural
+	| '='		! Gerund
+	
+<Noun Suffix Set> ::= <Noun Suffix>
+	| <Noun Suffix> <Noun Suffix Set>
+
+<Noun Phrase> ::= <Noun>
+	| <Noun> <Adjective Set>
+
+<Adjective Set> ::= <Adjective>
+	| <Adjective> <Adjective Set>
+	| <Restrictive Clause>
+	| <Restrictive Clause> <Adjective Set>
+
+<Adjective> ::= Word
+
+<Restrictive Clause> ::= <Adjective> '[' <Phrase> ']'
+
+
+! ===================================================================
+! Verbs
+! ===================================================================
+
+<Verb Phrase> ::= <Noun Set> '.' <Verb> '(' <VerbObject> ')'
+	| <Verb> '(' <VerbObject> ')'
+
+<VerbObject> ::= <Phrase>
+	|
+	
+<Verb> ::= Word
+	| Word <Verb Suffix>
+	| Word <Adverb Set>
+	| Word <Verb Suffix> <Adverb Set>
+
+<Verb Suffix> ::= '-'	! Past Tense
+	| '+'		! Future Tense
+
+<Adverb Set> ::= <Adverb>
+	| <Adverb> <Adverb Set>
+	| <Preposition>
+	| <Preposition> <Adverb Set>
+
+<Adverb> ::= Word 
+
+<Preposition> ::= <Adverb> '[' <Phrase> ']'

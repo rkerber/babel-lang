@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="Babel.Declaration">
+    <Position X="11.75" Y="5.75" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>Declaration.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Babel.Sentence">
+    <Position X="14" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Sentence.cs</FileName>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Babel.Statement">
+    <Position X="11.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Statement.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Babel.Word">
+    <Position X="0.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>Words\Word.cs</FileName>
+      <HashCode>AAAAAAAAAAQAAAAEAAAAAACAAAAAAAAIAAAACAEAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Babel.Noun">
+    <Position X="0.5" Y="3.25" Width="2.25" />
+    <TypeIdentifier>
+      <FileName>Words\Noun.cs</FileName>
+      <HashCode>AAAAAgAgAAAAIAAAAAAAAACAAAACgAAAAgAAAAEAAAI=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Babel.Adjective">
+    <Position X="3" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Words\Adjective.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Babel.Verb">
+    <Position X="4.75" Y="3.25" Width="2" />
+    <TypeIdentifier>
+      <FileName>Words\Verb.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAoAIAAAASAAAAAgAAAAIAAAAEAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Babel.Adverb">
+    <Position X="7" Y="3.25" Width="2" />
+    <TypeIdentifier>
+      <FileName>Words\Adverb.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAEAAAAAAAAAAAAEAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Babel.ListMode">
+    <Position X="0.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Words\Noun.cs</FileName>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Enum>
+</ClassDiagram>

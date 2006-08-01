@@ -1,0 +1,46 @@
+##TEMPLATE-NAME 'C# - Calitha Engine'
+##LANGUAGE 'C#'
+##ENGINE-NAME 'Calitha GOLD Parser Engine'
+##AUTHOR 'Robert van Loenhout' 
+##FILE-EXTENSION 'cs'
+##NOTES
+This template creates the constants for symbols
+and rules and a custom parser class that acts
+as a template for parsing any source.
+The custom objects will be created after the
+entire source has been parsed by the LALR
+parser.
+##END-NOTES
+##ID-CASE ProperCase
+##ID-SEPARATOR '_'
+
+using System;
+using System.IO;
+using System.Runtime.Serialization;
+using com.calitha.goldparser.lalr;
+using com.calitha.commons;
+
+namespace Babel
+{
+    public enum ParserSymbols : int
+    {
+##SYMBOLS
+##DELIMITER ','
+        /// <summary>
+        /// %Name.XML%
+        /// </summary>
+        %ID% = %Value.Padded%%Delimiter% // %Description%
+##END-SYMBOLS
+    };
+
+    public enum ParserRules : int
+    {
+##RULES
+##DELIMITER ','
+        /// <summary>
+        /// %Description.XML%
+        /// </summary>
+        %ID% = %Value.Padded%%Delimiter% // %Description%
+##END-RULES
+    };
+}
