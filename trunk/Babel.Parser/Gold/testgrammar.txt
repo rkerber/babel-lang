@@ -1,0 +1,58 @@
+testgrammar
+
+     
+Format 
+    testgrammar [options] CGT-File Test-File [Log-File]
+     
+Overview 
+    After the grammar has been successfully compiled by the Builder, the 
+    developer can check how Deterministic Finite Automata and LALR algorithms 
+    will analyze any number of test cases.  
+    
+    To test the behavior of the algorithms, a local embedded implementation of 
+    the Visual Basic 6 Engine is used. Although different implementations of 
+    the Engine exist, the behavior of the LALR and DFA algorithms is constant. 
+    Regardless of whether an Engine is written for Visual Basic, C++ or Java, 
+    the parse tables will create the same number of reductions and will accept 
+    or reject the same information. As a result, the specific details on how 
+    the Visual Basic 6 Engine was implemented, will have no effect on testing. 
+    
+    Please note: This program only supports test files that are encoding in ASCII
+    or UTF-16 with the Byte-Order Mark (BOM).
+    
+     
+Details 
+    Options
+        -trim, +trim
+            If this flag is set true, the testgrammar program will use 
+            the Trim Reductions feature that is part of the ActiveX 
+            implementation of the Engine. This feature will reduce the number
+            of nodes in the parse tree.  This option defaults to false, which
+            makes "-trim" unnecessary.
+                    
+        -actions, +actions
+            If this flag is set to true, the parse actions performed by the
+            Engine will be saved to the Log File. The option defaults to
+            "+actions" if not specified.
+        
+        -tree, +tree
+            If this flag is set to true, a text version of the parse tree will
+            be saved to the Log File. This feature is identical to the Export
+            Parse Tree option in the Windows version  of the Builder. If the
+            test file is not accepted by the parser (there was a syntax or 
+            lexical error), then no tree will be generated. The option 
+            defaults to "+tree" if not specified.                
+        
+    CGT File 
+        Required. The Compiled Grammar Table file (.cgt) is created by the 
+        Builder application. 
+        
+    Test File 
+        Required. This file will be read by the testgrammar program and parsed.  
+    
+    Log File 
+        Optional. If this field is left blank, the testgrammar program will 
+        automatically create a filename using the test file's filename. The 
+        new filename will contain the same base, but will have a .out 
+        extension. For example, if the test filename is "test.txt", the 
+        file "test.out" will be created. 

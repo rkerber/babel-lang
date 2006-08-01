@@ -1,0 +1,82 @@
+yacctogold
+
+     
+Format 
+    yacctogold [Options] YACC-File GOLD-File
+     
+Overview 
+    This utility program will convert a grammar written using the YACC 
+    Meta-language to the GOLD Meta-language. 
+    
+    The program will create the "hidden" rules that are implied with
+    the %left and %right YACC directives. The %prec directive, which is 
+    primarily used for unary operators, is also supported.
+    
+    Currently, all other YACC directives such as embedded code, %union, 
+    %type, etc... are parsed by this utility program, but are discarded.
+
+
+About YACC
+    One of the oldest and most respected parsing engine generators available
+    to developers is YACC. Like "vi" "grep" and "awk", this software is 
+    considered the de facto standard in the UNIX world. YACC, which is an 
+    acronym for Yet Another Compiler-Compiler, was developed by Stephen C.
+    Johnson at AT&T 
+    
+    YACC can be used to create parsers using the C and C++ programming 
+    languages. 
+    
+    The term "YACC" actually refers to two separate compiler-compilers, 
+    "lex" and "yacc", which constitute the development platform. Each 
+    application is used to generate a different part of the parsing 
+    system and, in turn, use  different input files with the same generic 
+    format, but varying semantics. 
+     
+    The "lex" application generates a new program called "lex.yy.c" which 
+    implements the tokenizer using a Deterministic Finite Automaton. The 
+    other application, "yacc", generates a new program called "y.tab.c" 
+    which implements a LALR parsing algorithm. Once each application has 
+    created their respective program, both can be combined to create the 
+    complete system. 
+    
+    
+Details    
+    Options
+        -uniform, +uniform        
+            If this flag is set to true, each production will be indented the 
+            same number of spaces from the left hand margin. This format makes 
+            large grammars much easier to read. 
+            
+            If set to false, the width of the rule's name will be used to 
+            indent each of the productions. This was the original format used
+            by the GOLD Meta-Language. For small grammars, this format is 
+            ideal.
+            
+            The style you select has no effect how the grammar is interpreted
+            by the Builder. By default, this flag is set to true.
+            
+        -underscores, +underscores
+            In YACC, rule names follow the same syntax as C++ identifiers. 
+            Often they include underscores or compound words. Examples 
+            include: stmt_list and STMT_LIST.
+             
+            If this this flag is set to true, the system will convert all 
+            underscores to spaces. The default value is true.
+            
+        -case, +case
+            In many cases, the YACC grammar will use a change in typecase to 
+            represent new words. This is common in most programming languages. 
+            If this option is set to true, a space will be inserted whenever
+            the typecase changes. The default value is true.
+            
+
+    YACC File 
+        Required. This file contains the grammar written in the YACC 
+        Meta-language
+        
+    GOLD File 
+        Required. This file will be created by the utility program. The
+        filename is required since the extension used for YACC files 
+        varies and, sometimes, can be .grm - which is the de-facto
+        extension for GOLD files.
+        

@@ -1,0 +1,36 @@
+#TITLE=Babel
+; This file is required for EditPlus to run correctly.
+
+#DELIMITER=,(){}[]-+*%/="'~!&|<>?:;.#
+#QUOTATION1='
+#QUOTATION2="
+#CONTINUE_QUOTE=n
+#LINECOMMENT=//
+#COMMENTON=/*
+#COMMENTOFF=*/
+#ESCAPE=\
+#CASE=y
+
+#KEYWORD=Pronoun
+I
+You
+
+#KEYWORD=Interrogative
+who
+which
+what
+when
+where
+why
+how
+
+#KEYWORD=Boolean Interrogatives
+is
+can
+do
+have
+has
+are
+will
+did
+may

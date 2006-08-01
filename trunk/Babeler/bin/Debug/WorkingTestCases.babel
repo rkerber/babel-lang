@@ -1,0 +1,438 @@
+/*
+	Babel Test Cases
+	Bryan Livingston
+*/
+
+// Babel is a formal grammar for representing thoughts and the meaning of human languages.
+// In this sentance for is used as a conjunction
+// Babel.Grammar formal for[represent=[Thought* & Meaning of[Language* human]]];
+
+// The quick brown fox jumped over the lazy dog.
+Fox quick brown.jump- over[Dog lazy]();
+
+// The chickens are running loose today.
+Chicken*.run= loose today();
+
+// past tense verb
+// I ate cheese.
+I.eat-(Cheese);
+
+// future tense verb
+// I will eat cheese.
+I.eat+(Cheese);
+
+// My dog ran quickly.
+Dog my.run- quick();
+
+// Use of verb as the object (not subject of another verb.)
+// See Jane run.
+You.see(Jane.run());
+see(Jane.run());
+
+// Declaration
+// Joe is tall.
+Joe.tall;
+Joe.is(tall);
+
+// Past-tense Declaration
+// Joe was tall.
+Joe.is-(tall);
+
+// Inheritance Declaration or Subclass Declaration
+// Joe is a human.
+Joe.Human;
+
+// Before you go to school, take out the trash.
+//before(You.goto(School)): You.remove(Trash);
+You.remove before[You.goto(School)](Trash);
+
+// If I am riding a blue horse, what color horse am I ridding?
+//if(I.ride(horse blue)): what color(horse that(I.ride));
+
+// What is the color of horse that I am riding?
+what color(Horse that[I.ride()]);
+
+// The horse that I was riding died.
+Horse that[I.ride-()].die-();
+
+// boolean interrogitive question
+// Is Joe tall?
+is tall(Joe);
+
+// interrogitive question
+// Where is Joe?
+where(Joe);
+
+/// <source>The crate which was left in the corridor has now been moved into the storage closet.</source>
+//be now (Crate left- in(Corridor), move- into(Closet storage));
+//be now (Crate left- , move- into(Closet storage));
+//Crate in[Corridor].move- into[Closet storage]();
+
+
+// Subject Verb Object
+// http://en.wikipedia.org/wiki/Subject_Verb_Object
+// Sam ate the oranges.
+Sam.eat-(Orange*);
+ 
+// Simple subject and predicate
+// Samson slept. 
+Samson.sleep-();
+
+// Understood subject (for commands, directives)
+// Sit!
+You.sit();	
+
+// Questions 
+// Where are you going?
+where go=(You);
+
+// You were reading this morning.
+// The morning of today, you read.
+You.read- this[Morning]();
+
+// What were you reading this morning?
+what(You.read- this[Morning]());
+
+// Whose bike were you using?
+whose(Bike that[You.use-()]);
+
+// You bought the bike that you use.
+You.buy-(Bike that[You.use()]);
+
+// May I postpone this assignment?
+may(I.postpone(Assignment));
+
+// Compound predicate
+// The cat howled and scratched ferociously.
+// Cat.howl-() & scratch- ferocious(); // might be a better general case.  I also like the look of this one better and like the feel of it in the parser.
+// Cat.howl- & scratch- ferocious(); // would work much better for constitution case above.
+
+// Compound subject and predicate
+// Juanita and Celso worked hard and then rested.
+//(Juanita & Celso).work- hard() & rest-();
+Juanita & Celso.work- hard then[Juanita & Celso.rest-()]();
+
+// Direct object
+// Tashonda sent e-mail.
+Tashonda.send-(Email);
+
+// Compound direct objects
+// Tashonda sent cards and letters.
+Tashonda.send-(Card* & Letter*);
+
+// Three direct objects
+// Tashonda sent e-mail, cards, and letters.
+Tashonda.send-(Email & Card* & Letter*);
+
+// Same as above but to test out Or list case.
+// Tashonda sent e-mail, cards, or letters.
+Tashonda.send-(Email | Card* | Letter*);
+	
+// Compound predicate with direct objects
+// Joselyn cooked breakfast and ate it.
+// Joselyn.cook-(Breakfast) & eat-(Breakfast);
+// Joselyn.cook- & eat-(Breakfast);
+
+// Compound predicate with one direct object
+// Samantha proofreads and edits her essays.
+// Samantha.proofread(Essay* of[Samantha]);  Samantha.edit(Essay* of[Samantha]);
+
+// Indirect object
+// Mrs. Doubtfire gave the children homework.
+MrsDoubtfire.give- to[Children](Homework);
+
+// Compound indirect objects
+// Mrs. Doubtfire gave Tabitha and Samantha quizzes.
+MrsDoubtfire.give- to[Tabitha & Samantha](Quiz*);
+
+// Reflexive Pronouns
+// [as direct object] Jos cut himself.
+// [as indirect object] Mr. Edwards gave himself a raise.
+// [as object of a preposition] She cared only for herself. 
+
+// Intensive Pronoun
+// I myself prefer basketball. [or]
+// I prefer basketball myself.. 
+// "myself" doesn't have meaning that isn't already there.
+// What really might be meant is "for myself".
+I.prefer for[Myself](Basketball);
+
+// Predicate noun
+// John Calhoun is a coach.
+JohnCalhoun.is(Coach);
+JohnCalhoun.Coach;
+
+// Objective Complement
+// Johnny painted his old jalopy purple. 
+// The club elected Tashonda president.
+// The club elected Tashonda as its president.
+// (with "as" as expletive)
+
+// Appositive
+// John Calhoun, the coach, yelled at the referees.
+
+// Direct address
+// Heitor, address the class now. 
+
+// Interjection
+// Man, that hurt! 
+// Using That as a pronoun is strongly discouraged.  Probably should not be allowed.
+// It is better and much easier for the computer to be explicit with the subject.
+That.hurt much();
+
+// Adjective
+// Athletic moves excite the crowd.
+Move* athletic.excite(Crowd);
+
+// Compound adjectives
+// The little old lady hit the tall and distinguished gentleman. 
+Lady little old.hit(Gentleman tall distinguish);
+
+// Predicate adjective
+// Samson was powerful. 
+Samson.is-(power=);
+
+// Compound predicate adjectives
+// Samson was powerful but gullible.
+
+// Comparative Adjective
+// Joanna is considerably taller than her brother [is]. 
+
+// Adverb
+// Dogsbreath works quickly.
+Dogsbreath.work* quick=();
+
+// Adverbs modifying other adverbs
+// A very friendly dog wags its tail quite often.
+// Dog very_friend=.wag* quite[often](Tail);
+
+// Compound adverbs
+// Dr. Turveydrop waited patiently and quietly at the door.
+DrTurveydrop.wait- patient quiet at[Door]();
+
+// Prepositional phrase
+// Charles is working in the garden. 
+Charles.work= in[Garden]();
+
+// Prepositional phrase modifying another prepositional phrase
+// Charles is working in the garden by the river. 
+//Charles.work= in[Garden by[River]]();
+
+// Preposition with compound objects
+// The thought of getting up and working is alarming. 
+//Thought of[get= up] of[work=].alarm=;
+
+// Prepositional phrase modifying an adverb
+// Carlita does her best work early during the semester. 
+
+// Prepositional Phrase as Subjective Complement
+// She felt under the weather.. 
+She.feel- under[Weather]();
+
+// Participle
+//	The crumbling bridge must be repaired
+//(Bridge crumbling).be must(repair-());
+//(Bridge crumbling).(be must repair-())();
+//Bridge crumble=. must be[ repair-()
+
+// Participle/Participial Phrase
+// The screaming crowd watched the bridge falling into the river.
+Crowd scream.watch-(Bridge.fall= into[River]());
+
+// Gerund phrase as subject
+// Working hard can be profitable. 
+
+// Gerund phrase as sentence object
+// Terminita hates eating broccoli. 
+
+// Gerund phrase as object of preposition
+// Wolfson wrote a book about playing basketball. 
+
+// Infinitive as noun (subject & predicate)
+// To know him is to love him. 
+
+// Infinitive phrase acting as adjective
+// His decision to leave early was unfortunate.
+
+// Infinitive phrase acting as adverb
+// He is determined to work hard. 
+
+// Infinitive phrase as direct object
+// The Eagles slowly began to climb the national rankings.
+// undecided
+//	Eagle*.begin- to[climb] slow(Ranking* national);
+//	Eagle*.climb begin- slow(Ranking* national);  // leaning towards this way
+
+// Infinitive phrase as object of preposition
+// Pedrito had no choice except to run away.
+// ("Except" and "save" are really about the only prepositions with which you can have an infinitive phrase as an object of a preposition.)
+
+// Infinitive as Objective Complement
+// Mom wanted me to do the dishes.
+
+// Infinitive as Appositive
+// It was a mistake to elect William president.
+
+// Causative Verb
+// Professor Villa made her students read four novels. 
+// ProfessorVilla.make- read(Novel* four);
+
+// Expletive construction (there is/are)
+// There are never enough hot dogs at the annual picnic. 
+// There is no one working with Albert.. 
+
+// Absolute Construction
+// To tell the truth, I do not remember meeting her.
+
+// Correlative Conjunction
+// Either we wash the walls or we paint them.
+
+// Passive Verbs
+// The burglar was shot. 
+// Mary was awarded the Smith Case.. 
+// Turveydrop was named chairman while he was out of the room.. 
+
+// Compound Sentences
+// Boggs hit the ball well, but he ran to the wrong base. 
+// Forecasting technologies are more sophisticated and today's forecasters are better trained, but weather predictions are still not very reliable. 
+
+// Adjective clause introduced by an adverb
+// We slowly entered the theater where Lincoln was shot. 
+// OPTIONAL METHOD:
+// We slowly entered the theater where Lincoln was shot. 
+
+// Adjective clause introduced by relative pronoun and predicate
+// The bill, which the house narrowly passed, was defeated by the senate. 
+// Another Example:
+// A man whom the grand jury indicted in December was arrested in Baltimore. 
+
+// Adjective clause introduced by a relative pronoun as direct object.  Relative clause introduced by "who"
+// That woman who just left the room will probably be the next president. 
+// People who live in glass houses shouldn't throw stones.
+
+// Adjective clause introduced by "that"
+// Charlene gave Dilbert all the trouble that he could handle. 
+
+// Adjective clause modifying the object of a preposition
+// Dogsbreath gave a million bucks to the nurse who saved his life. 
+
+// Adjective clause modifying sentence subject
+// The car that Georgina bought was more expensive than mine. 
+
+// Adverb clause modifying the verb
+// We will go to the restaurant when this movie is finished. 
+// OPTIONAL METHOD:
+// It looks bad when you entirely miss the ball. (clause modifies "looks") 
+
+// Noun clause acting as sentence subject
+// What Ramon knew about cooking could fill a whole library. 
+// OPTIONAL METHOD:
+// How we will pay for this car is a mystery to me. 
+
+// Noun clause as object of preposition
+// The couple had a huge argument about where they would live. 
+
+// Noun clause as predicate noun
+// What really matters is what you know. 
+// Another example:
+// Our biggest worry is that students won't read the signs. 
+
+// Noun clause as direct object
+// The New Yorker quickly rejected whatever Sarah submitted. 
+NewYorker.reject- quick whatever[Sarah.submit-()]();
+
+// Another example:
+// We can only hope [that] it is not too late. (where the word "that" is omitted) 
+
+// Compound-complex sentence
+// When the train goes through, the windows rattle noisily and the whole house shakes. 
+//when[Train.goes through(), Window*.rattle noisy() & (House whole).shake*()];
+Window*.rattle noise when[Train.goes through()]();
+House whole.shake* when[Train.goes through()]();
+
+/*
+The Lords Prayer - International Consultation on English Texts Version
+Our Father in heaven, 
+Hallowed be your name, 
+Your kingdom come, 
+Your will be done, 
+On earth as in heaven. 
+Give us today our daily bread. 
+Forgive us our sins as we forgive those who sin against us. 
+Save us from the time of trial, 
+And deliver us from evil. 
+[For the kingdom, the power, and the glory are yours, 
+Now and forever. Amen.] 
+*/
+
+/*
+Name of[Father our in[Heaven]].hallowed;
+Kingdom of[Father our in[Heaven]].come();
+Will of[Father our in[Heaven]].done on[Earth] as[in[Heaven]]();
+You.give to[Us](Bread daily);
+You.forgive as[We.forgive(Those who[sin against[Us]()])](Us);
+You.save from[Time of[trial]](Us);
+You.deliver from[Evil](Us);
+Kingdom & Power & Glory.yours now forever;
+*/
+
+/*
+The North Wind and the Sun
+The North Wind and the Sun were disputing which was the stronger, when a traveler came along wrapped in a warm cloak. 
+They agreed that the one who first succeeded in making the traveler take his cloak off should be considered stronger than the other. 
+Then the North Wind blew as hard as he could, but the more he blew the more closely did the traveler fold his cloak around him; 
+and at last the North Wind gave up the attempt. Then the Sun shined out warmly, and immediately the traveler took off his cloak. 
+And so the North Wind was obliged to confess that the Sun was the stronger of the two. 
+*/
+
+/*
+
+The Tower of Babel story, from Genesis 11:1-9
+
+And all the land was one language and few words.
+And it was when [they] travelled from Qedem/the east, [they] found a plain in the land [of] Shin`ar and [they] dwelt there. 
+And [one] man said to his friend, "Come! We'll brick bricks and burn to a burning." And the brick was to them (to) stone, and the clay was to them (to) material. 
+And they said, "Come! We'll build for us a city and a tower and its head [the tower's] in the sky, and we'll make for us a name, lest we be scattered on the face of all the earth." 
+And YHWH descended to see the city and the tower which the sons of Man (had) built. 
+And YHWH said, "Behold, one nation, and [there is] one language for all of them, and this they have begun to do. And now, it will not be denied from them, all which they [will] plot to do. 
+Come! We will descend and we will confuse their language there, that [they] will not hear [one] man the language [of] his friend. 
+And YHWH scattered them from there on the face of all the earth, and they ceased to build the city. 
+Therefore called its name "Babel," because there YHWH confused the language of all the earth, and from there YHWH scattered them on the face of all the earth. 
+*/
+
+
+/*
+// I pledge allegiance to the flag of the united states of america
+// and to the republic for which it stands, one nation, under god,
+// indivisibile with liberty and justice for all.
+I.pledge
+(
+	Allegiance
+		to[Flag of[State* unite- of[America]]] &
+		to[Republic of[Flag] !divide under[God] with[Liberty & Justice for[All]]]
+);
+
+// We the People of the United States, 
+// in Order to form a more perfect Union, 
+// establish Justice, insure domestic Tranquility,
+// provide for the common defence, promote the general Welfare, 
+// and secure the Blessings of Liberty to ourselves and our Posterity,
+// do ordain and establish this Constitution for the United States of America.
+(
+	People
+		of[State* unite-]
+		to
+		[
+			form(Union more[perfect]) &
+			establish(Justice)
+		]
+).establish(Constitution for[State* unite- of[America]]);
+
+(
+	People
+		[of State* unite-]
+		[to form(Union[more perfect]) & establish(Justice)]
+).establish(Constitution [for State* unite- [of America]]);
+
+*/
+

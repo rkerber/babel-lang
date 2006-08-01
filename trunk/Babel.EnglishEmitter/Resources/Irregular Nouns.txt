@@ -1,0 +1,119 @@
+// "Base Form" "Plural"
+// http://www2.gsu.edu/~wwwesl/egw/crump.htm
+
+// ending in f cases
+calf calves 
+elf elves 
+half halves 
+hoof hooves 
+knife knives 
+leaf leaves 
+life lives 
+loaf loaves 
+scarf scarfs/scarves 
+self selves 
+sheaf sheaves 
+shelf shelves 
+thief thieves 
+wife wives 
+wolf wolves 
+
+// desended
+fireman firemen 
+foot feet 
+goose geese 
+louse lice 
+man men 
+mouse mice 
+tooth teeth 
+woman women 
+child children 
+ox oxen 
+die dice
+person people
+
+// ending in o
+auto autos
+kangaroo kangaroos
+kilo kilos
+memo memos
+photo photos
+piano pianos
+pimento pimentos
+pro pros 
+solo solos 
+soprano sopranos 
+studio studios 
+tattoo tattoos 
+video videos 
+zoo zoos 
+echo echoes 
+embargo embargoes 
+hero heroes 
+potato potatoes 
+tomato tomatoes 
+torpedo torpedoes 
+veto vetoes
+
+// plurals that don't change
+cod cod
+deer deer 
+fish fish
+offspring offspring 
+perch perch
+sheep sheep 
+trout trout
+salmon salmon
+pike pike
+halibut halibut
+tuna tuna
+
+// foreign
+alga algae  
+larva larvae  
+vertebra vertebrae 
+
+// ending in -us
+alumnus alumni  
+bacillus bacilli  
+focus foci  
+fungus fungi
+nucleus nuclei  
+radius radii  
+stimulus stimuli  
+terminus termini
+
+// ending -um
+addendum addenda  
+bacterium bacteria  
+datum data  
+erratum errata  
+medium media  
+ovum ova  
+stratum strata  
+
+// Nouns ending in -is becoming -es in plural: 
+analysis analyses 
+axis axes 
+basis bases 
+crisis crises 
+diagnosis diagnoses 
+emphasis emphases 
+hypothesis hypotheses 
+neurosis neuroses 
+oasis oases 
+parenthesis parentheses 
+synopsis synopses 
+thesis theses 
+
+// Nouns ending in -on becoming -a: 
+criterion criteria 
+phenomenon phenomena 
+automaton automata 
+// Other irregular plurals, retained from different languages: 
+libretto libretti 
+tempo tempi 
+virtuoso virtuosi 
+cherub cherubim 
+seraph seraphim 
+schema schemata 
