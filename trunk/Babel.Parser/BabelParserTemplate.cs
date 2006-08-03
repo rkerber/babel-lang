@@ -314,60 +314,60 @@ namespace Babel
         /// </summary>
         Verbphrase_Lparan_Rparan = 32 , // <Verb Phrase> ::= <Verb> '(' <VerbObject> ')'
         /// <summary>
-        /// <Verb> ::= Word
-        /// </summary>
-        Verb_Word = 33 , // <Verb> ::= Word
-        /// <summary>
-        /// <Verb> ::= Word <Verb Suffix>
-        /// </summary>
-        Verb_Word2 = 34 , // <Verb> ::= Word <Verb Suffix>
-        /// <summary>
-        /// <Verb> ::= Word <Adverb Set>
-        /// </summary>
-        Verb_Word3 = 35 , // <Verb> ::= Word <Adverb Set>
-        /// <summary>
-        /// <Verb> ::= Word <Verb Suffix> <Adverb Set>
-        /// </summary>
-        Verb_Word4 = 36 , // <Verb> ::= Word <Verb Suffix> <Adverb Set>
-        /// <summary>
-        /// <Verb Suffix> ::= &#39;-&#39;
-        /// </summary>
-        Verbsuffix_Minus = 37 , // <Verb Suffix> ::= '-'
-        /// <summary>
-        /// <Verb Suffix> ::= &#39;+&#39;
-        /// </summary>
-        Verbsuffix_Plus = 38 , // <Verb Suffix> ::= '+'
-        /// <summary>
-        /// <Adverb Set> ::= <Adverb>
-        /// </summary>
-        Adverbset = 39 , // <Adverb Set> ::= <Adverb>
-        /// <summary>
-        /// <Adverb Set> ::= <Adverb> <Adverb Set>
-        /// </summary>
-        Adverbset2 = 40 , // <Adverb Set> ::= <Adverb> <Adverb Set>
-        /// <summary>
-        /// <Adverb Set> ::= <Preposition>
-        /// </summary>
-        Adverbset3 = 41 , // <Adverb Set> ::= <Preposition>
-        /// <summary>
-        /// <Adverb Set> ::= <Preposition> <Adverb Set>
-        /// </summary>
-        Adverbset4 = 42 , // <Adverb Set> ::= <Preposition> <Adverb Set>
-        /// <summary>
-        /// <Adverb> ::= Word
-        /// </summary>
-        Adverb_Word = 43 , // <Adverb> ::= Word
-        /// <summary>
-        /// <Preposition> ::= <Adverb> &#39;[&#39; <Phrase> &#39;]&#39;
-        /// </summary>
-        Preposition_Lbracket_Rbracket = 44 , // <Preposition> ::= <Adverb> '[' <Phrase> ']'
-        /// <summary>
         /// <VerbObject> ::= <Phrase>
         /// </summary>
-        Verbobject = 45 , // <VerbObject> ::= <Phrase>
+        Verbobject = 33 , // <VerbObject> ::= <Phrase>
         /// <summary>
         /// <VerbObject> ::= 
         /// </summary>
-        Verbobject2 = 46   // <VerbObject> ::= 
+        Verbobject2 = 34 , // <VerbObject> ::= 
+        /// <summary>
+        /// <Verb> ::= Word
+        /// </summary>
+        Verb_Word = 35 , // <Verb> ::= Word
+        /// <summary>
+        /// <Verb> ::= Word <Verb Suffix>
+        /// </summary>
+        Verb_Word2 = 36 , // <Verb> ::= Word <Verb Suffix>
+        /// <summary>
+        /// <Verb> ::= Word <Adverb Set>
+        /// </summary>
+        Verb_Word3 = 37 , // <Verb> ::= Word <Adverb Set>
+        /// <summary>
+        /// <Verb> ::= Word <Verb Suffix> <Adverb Set>
+        /// </summary>
+        Verb_Word4 = 38 , // <Verb> ::= Word <Verb Suffix> <Adverb Set>
+        /// <summary>
+        /// <Verb Suffix> ::= &#39;-&#39;
+        /// </summary>
+        Verbsuffix_Minus = 39 , // <Verb Suffix> ::= '-'
+        /// <summary>
+        /// <Verb Suffix> ::= &#39;+&#39;
+        /// </summary>
+        Verbsuffix_Plus = 40 , // <Verb Suffix> ::= '+'
+        /// <summary>
+        /// <Adverb Set> ::= <Adverb>
+        /// </summary>
+        Adverbset = 41 , // <Adverb Set> ::= <Adverb>
+        /// <summary>
+        /// <Adverb Set> ::= <Adverb> <Adverb Set>
+        /// </summary>
+        Adverbset2 = 42 , // <Adverb Set> ::= <Adverb> <Adverb Set>
+        /// <summary>
+        /// <Adverb Set> ::= <Preposition>
+        /// </summary>
+        Adverbset3 = 43 , // <Adverb Set> ::= <Preposition>
+        /// <summary>
+        /// <Adverb Set> ::= <Preposition> <Adverb Set>
+        /// </summary>
+        Adverbset4 = 44 , // <Adverb Set> ::= <Preposition> <Adverb Set>
+        /// <summary>
+        /// <Adverb> ::= Word
+        /// </summary>
+        Adverb_Word = 45 , // <Adverb> ::= Word
+        /// <summary>
+        /// <Preposition> ::= <Adverb> &#39;[&#39; <Phrase> &#39;]&#39;
+        /// </summary>
+        Preposition_Lbracket_Rbracket = 46   // <Preposition> ::= <Adverb> '[' <Phrase> ']'
     };
 }

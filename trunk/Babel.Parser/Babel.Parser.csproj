@@ -30,11 +30,11 @@
   <ItemGroup>
     <Reference Include="CalithaLib, Version=1.11.2083.28932, Culture=neutral">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Calitha\CalithaLib.dll</HintPath>
+      <HintPath>Gold\CalithaLib.dll</HintPath>
     </Reference>
     <Reference Include="GoldParserEngine, Version=1.11.2083.28932, Culture=neutral">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Calitha\GoldParserEngine.dll</HintPath>
+      <HintPath>Gold\GoldParserEngine.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -58,15 +58,15 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Grammer\Babel.cgt" />
-    <None Include="Grammer\Babel.grm" />
-    <None Include="Grammer\Babel.pgt" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Babel\Babel.csproj">
       <Project>{00BDB545-CC5C-45A7-80FB-3E92611FD8AA}</Project>
       <Name>Babel</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Grammar\Babel.cgt" />
+    <None Include="Grammar\Babel.grm" />
+    <None Include="Grammar\Babel.pgt" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -78,6 +78,6 @@
   -->
   <PropertyGroup>
     <PreBuildEvent>cd $(ProjectDir)
-$(ProjectDir)\Gold\createskelprog_main Grammer\Babel.cgt Grammer\Babel.pgt BabelParserTemplate.cs</PreBuildEvent>
+$(ProjectDir)\Gold\createskelprog_main Grammar\Babel.cgt Grammar\Babel.pgt BabelParserTemplate.cs</PreBuildEvent>
   </PropertyGroup>
 </Project>
