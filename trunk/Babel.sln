@@ -29,6 +29,8 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "C:\...\Babel.Web\", "Babel.
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatterBot", "ChatterBot\ChatterBot.csproj", "{1D51EBB3-A3B1-4409-8CA5-CCB01E02D331}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|.NET = Debug|.NET
@@ -89,6 +91,16 @@ Global
 		{2D1B4B7B-A61C-4E41-8DA8-F0CC370A0DE9}.Release|Any CPU.ActiveCfg = Debug|.NET
 		{2D1B4B7B-A61C-4E41-8DA8-F0CC370A0DE9}.Release|Mixed Platforms.ActiveCfg = Debug|.NET
 		{2D1B4B7B-A61C-4E41-8DA8-F0CC370A0DE9}.Release|Mixed Platforms.Build.0 = Debug|.NET
+		{1D51EBB3-A3B1-4409-8CA5-CCB01E02D331}.Debug|.NET.ActiveCfg = Debug|Any CPU
+		{1D51EBB3-A3B1-4409-8CA5-CCB01E02D331}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D51EBB3-A3B1-4409-8CA5-CCB01E02D331}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D51EBB3-A3B1-4409-8CA5-CCB01E02D331}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{1D51EBB3-A3B1-4409-8CA5-CCB01E02D331}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{1D51EBB3-A3B1-4409-8CA5-CCB01E02D331}.Release|.NET.ActiveCfg = Release|Any CPU
+		{1D51EBB3-A3B1-4409-8CA5-CCB01E02D331}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D51EBB3-A3B1-4409-8CA5-CCB01E02D331}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D51EBB3-A3B1-4409-8CA5-CCB01E02D331}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{1D51EBB3-A3B1-4409-8CA5-CCB01E02D331}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
