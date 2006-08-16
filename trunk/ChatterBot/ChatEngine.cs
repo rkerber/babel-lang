@@ -15,7 +15,7 @@ namespace ChatterBot
         public string Act()
         {
             LastActed = DateTime.Now;
-            return String.Empty;
+            //return String.Empty;
 
             // if nothing has changed in log then do nothing
 
@@ -35,9 +35,9 @@ namespace ChatterBot
 
             // do nothing
 
-            //string result = "I.agree();";
-            //Log.Add(new LogEntry("Self", result));
-            //return result;
+            string result = "I.agree();";
+            Log.Add(new LogEntry("Self", result));
+            return result;
         }
 
         public void Sense(string message, string source)

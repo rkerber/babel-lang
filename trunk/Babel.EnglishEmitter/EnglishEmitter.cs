@@ -8,6 +8,23 @@ namespace Babel.EnglishEmitter
 {
 	public static class EnglishEmitter
 	{
+        public static string ToEnglish(string babel)
+        {
+            return ToEnglish(new Parser().ParseSource(babel));
+        }
+
+        public static string ToEnglish(List<Statement> statements)
+        {
+            StringBuilder result = new StringBuilder();
+
+            foreach(Statement s in statements)
+            {
+                result.Append(ToEnglish(s) + "\n");
+            }
+
+            return result.ToString();
+        }
+
 		public static string ToEnglish(Statement statement)
 		{
             string result = ToEnglish(statement.Verb);

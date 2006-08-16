@@ -28,7 +28,7 @@ public partial class _Default : System.Web.UI.Page
 
     private void parse()
     {
-        List<Statement> parse = parser.ParseSource(SourceTextBox.Text);
+        ParseResult parse = parser.ParseSource(SourceTextBox.Text);
 
         ResultLabel.Text = String.Empty;
 
@@ -37,7 +37,7 @@ public partial class _Default : System.Web.UI.Page
             ResultLabel.Text += EnglishEmitter.ToEnglish(s) + "<br>\n";
         }
 
-        foreach(Exception exception in parser.ErrorList)
+        foreach(Exception exception in parse.ErrorList)
         {
             ResultLabel.Text += exception.ToString() + "<br>\n";
         }
