@@ -10,7 +10,7 @@ namespace Babel.EnglishEmitter
 	{
 		public static string ToEnglish(Statement statement)
 		{
-            string result = statement.Verb.ToEnglish();
+            string result = ToEnglish(statement.Verb);
 
 			if (statement is Question)
             {
@@ -118,7 +118,7 @@ namespace Babel.EnglishEmitter
             return word.Text;
         }
 
-        public static string ToEnglish(this Verb verb)
+        public static string ToEnglish(Verb verb)
         {
 			StringBuilder result = new StringBuilder();
             if (verb.Subject != null)

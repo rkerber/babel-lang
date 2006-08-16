@@ -16,14 +16,14 @@ namespace Babel.EnglishEmitter
             return false;
         }
 
-        private static List<char> consonants = new List<char> { 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'z' };
+        private static List<char> consonants = new List<char>(new char[] { 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'z' });
 
         private static bool EndsWithSingleConsonant(string word)
         {
             return word.Length >= 2 && consonants.Contains(word[word.Length - 1]) && !consonants.Contains(word[word.Length - 2]);
         }
 
-        private static List<char> vowels = new List<char> { 'a', 'e', 'i', 'o', 'u' };
+        private static List<char> vowels = new List<char>(new char[] { 'a', 'e', 'i', 'o', 'u' });
 
         public static bool ContainsSingleVowel(string word)
         {

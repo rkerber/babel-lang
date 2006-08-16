@@ -46,6 +46,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Babel.EnglishEmitter\Babel.EnglishEmitter.csproj">
+      <Project>{D668DC32-92EB-4765-9A33-A807F212C8AD}</Project>
+      <Name>Babel.EnglishEmitter</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Babel.Parser\Babel.Parser.csproj">
       <Project>{533476A0-BC23-4764-A476-8ABF8484588F}</Project>
       <Name>Babel.Parser</Name>
@@ -53,10 +57,6 @@
     <ProjectReference Include="..\Babel\Babel.csproj">
       <Project>{00BDB545-CC5C-45A7-80FB-3E92611FD8AA}</Project>
       <Name>Babel</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Babel.EnglishEmitter\Babel.EnglishEmitter.csproj">
-      <Project>{D668DC32-92EB-4765-9A33-A807F212C8AD}</Project>
-      <Name>Babel.EnglishEmitter</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -72,5 +72,5 @@
     <None Include="bin\Debug\WorkingTestCases.babel" />
     <None Include="bin\Debug\TestCases.babel" />
   </ItemGroup>
-  <Import Project="$(ProgramFiles)\LINQ Preview\Misc\Linq.targets" />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
