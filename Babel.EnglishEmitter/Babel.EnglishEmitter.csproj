@@ -1,4 +1,4 @@
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -40,6 +40,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Babel.Parser\Babel.Parser.csproj">
+      <Project>{533476A0-BC23-4764-A476-8ABF8484588F}</Project>
+      <Name>Babel.Parser</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Babel\Babel.csproj">
       <Project>{00BDB545-CC5C-45A7-80FB-3E92611FD8AA}</Project>
       <Name>Babel</Name>

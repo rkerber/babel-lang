@@ -9,9 +9,7 @@ namespace Babel
 {
     public class Parser
     {
-        public List<Exception> ErrorList = new List<Exception>();
-
-		private List<Statement> results;
+		private ParseResult results;
 
         private LALRParser parser;
 
@@ -31,17 +29,16 @@ namespace Babel
             parser.OnParseError += new LALRParser.ParseErrorHandler(ParseErrorEvent);
 
             long t2 = DateTime.Now.Ticks;
-            Console.WriteLine(String.Format("Reading the Compiled Grammar Table File took {0}ms", (t2 - t1) / 10000));
         }
 
         private void TokenErrorEvent(LALRParser parser, TokenErrorEventArgs args)
         {
-            ErrorList.Add(new Exception(String.Format("{0}: Token error. Cannot recognize token {1}.", args.Token.Location, args.Token.Text)));
+            results.ErrorList.Add(new Exception(String.Format("{0}: Token error. Cannot recognize token {1}.", args.Token.Location, args.Token.Text)));
         }
 
         private void ParseErrorEvent(LALRParser parser, ParseErrorEventArgs args)
         {
-            ErrorList.Add(new Exception(String.Format("{0}: Syntax error. Expecting the following tokens {1}.  Found {2}.", args.UnexpectedToken.Location, args.ExpectedTokens, args.UnexpectedToken.Text)));
+            results.ErrorList.Add(new Exception(String.Format("{0}: Syntax error. Expecting the following tokens {1}.  Found {2}.", args.UnexpectedToken.Location, args.ExpectedTokens, args.UnexpectedToken.Text)));
         }
 
         private void TokenReadEvent(LALRParser parser, TokenReadEventArgs args)
@@ -250,19 +247,21 @@ namespace Babel
         }
 
 
-        public List<Statement> ParseSource(string source)
+        public ParseResult ParseSource(string source)
         {
-			long t1 = DateTime.Now.Ticks;
+            lock (this)
+            {
+			    long t1 = DateTime.Now.Ticks;
 
-            ErrorList.Clear();
-			results = new List<Statement>();
+			    results = new ParseResult();
+                NonterminalToken parseTree = parser.Parse(source);
 
-            NonterminalToken parseTree = parser.Parse(source);
+                long t2 = DateTime.Now.Ticks;
+                results.ParseTime = (t2 - t1) / 10000;
+    //            Console.WriteLine(String.Format("Parsing the source took {0}ms", (t2 - t1) / 10000));
 
-            long t2 = DateTime.Now.Ticks;
-            Console.WriteLine(String.Format("Parsing the source took {0}ms", (t2 - t1) / 10000));
-
-            return results;
+                return results;
+            }
         }
     }
 }

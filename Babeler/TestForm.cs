@@ -95,7 +95,7 @@ namespace Babel.Test
             resultTextBox.Clear();
             resultTreeView.Nodes.Clear();
 
-            List<Statement> parse = parser.ParseSource(sourceTextBox.Text);
+            ParseResult parse = parser.ParseSource(sourceTextBox.Text);
 
             foreach(Statement s in parse)
             {
@@ -108,10 +108,7 @@ namespace Babel.Test
             }
 
             int temp = resultTextBox.TextLength;
-            foreach(Exception exception in parser.ErrorList)
-            {
-                resultTextBox.AppendText(exception.ToString() + "\n");
-            }
+            resultTextBox.AppendText(parse.ToString());
 
             // highlight the errors in red
             resultTextBox.SelectionStart = temp;
