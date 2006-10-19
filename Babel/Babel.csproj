@@ -89,8 +89,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Question.cs" />
-    <Compile Include="Tense.cs" />
     <Compile Include="ListMode.cs" />
+    <Compile Include="Tense.cs" />
     <Compile Include="Words\Adjective.cs" />
     <Compile Include="Words\Adverb.cs" />
     <Compile Include="Words\Verb.cs" />
