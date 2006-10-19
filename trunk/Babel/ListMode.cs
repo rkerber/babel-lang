@@ -2,10 +2,9 @@ using System;
 
 namespace Babel
 {
-    public enum Tense
+    public enum ListMode
     {
-        Present,
-        Past,
-        Future
+        And,
+        Or
     }
 }

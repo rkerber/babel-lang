@@ -1,67 +1,110 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
   <Font Name="Tahoma" Size="8.25" />
-  <Class Name="Babel.Declaration">
-    <Position X="11.75" Y="5.75" Width="1.75" />
-    <TypeIdentifier>
-      <FileName>Declaration.cs</FileName>
-      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Babel.Sentence">
-    <Position X="14" Y="5.75" Width="1.5" />
+    <Position X="4.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <FileName>Sentence.cs</FileName>
-      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Babel.Statement">
-    <Position X="11.75" Y="4.25" Width="1.5" />
-    <TypeIdentifier>
-      <FileName>Statement.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
+  <Class Name="Babel.Statement">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Statement.cs</FileName>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+    </TypeIdentifier>
+    <Members>
+      <Field Name="verb" Hidden="true" />
+    </Members>
+  </Class>
   <Class Name="Babel.Word">
-    <Position X="0.75" Y="0.5" Width="1.75" />
+    <Position X="0.5" Y="0.5" Width="1.75" />
     <TypeIdentifier>
       <FileName>Words\Word.cs</FileName>
       <HashCode>AAAAAAAAAAQAAAAEAAAAAACAAAAAAAAIAAAACAEAAAA=</HashCode>
     </TypeIdentifier>
+    <Members>
+      <Field Name="text" Hidden="true" />
+    </Members>
   </Class>
   <Class Name="Babel.Noun">
     <Position X="0.5" Y="3.25" Width="2.25" />
     <TypeIdentifier>
       <FileName>Words\Noun.cs</FileName>
-      <HashCode>AAAAAgAgAAAAIAAAAAAAAACAAAACgAAAAgAAAAEAAAI=</HashCode>
+      <HashCode>CAAAAgAgAAAAIAAAAAAAAACAAAACgAAAAgAAAAkAAAI=</HashCode>
     </TypeIdentifier>
+    <Members>
+      <Field Name="adjectives" Hidden="true" />
+      <Field Name="gerund" Hidden="true" />
+      <Field Name="list" Hidden="true" />
+      <Field Name="listMode" Hidden="true" />
+      <Field Name="plural" Hidden="true" />
+    </Members>
   </Class>
   <Class Name="Babel.Adjective">
-    <Position X="3" Y="3.25" Width="1.5" />
+    <Position X="3" Y="3.25" Width="2.25" />
     <TypeIdentifier>
       <FileName>Words\Adjective.cs</FileName>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <HashCode>BAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
     </TypeIdentifier>
+    <Members>
+      <Field Name="restictiveClauseSubject" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
   </Class>
   <Class Name="Babel.Verb">
-    <Position X="4.75" Y="3.25" Width="2" />
+    <Position X="5.5" Y="3.25" Width="2" />
     <TypeIdentifier>
       <FileName>Words\Verb.cs</FileName>
-      <HashCode>AAAAAAAAAAAAAAAoAIAAAASAAAAAgAAAAIAAAAEAAIA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAgAIAACACAABgAgAAAAIAAAAEAAIA=</HashCode>
     </TypeIdentifier>
+    <Members>
+      <Field Name="adverbs" Hidden="true" />
+      <Field Name="subject" Hidden="true" />
+      <Field Name="tense" Hidden="true" />
+      <Field Name="verbObject" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
   </Class>
   <Class Name="Babel.Adverb">
-    <Position X="7" Y="3.25" Width="2" />
+    <Position X="7.75" Y="3.25" Width="2" />
     <TypeIdentifier>
       <FileName>Words\Adverb.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAEAAAAAAAAAAAAEAAAA=</HashCode>
     </TypeIdentifier>
+    <Members>
+      <Field Name="prepositionSubject" Hidden="true" />
+    </Members>
+  </Class>
+  <Class Name="Babel.Question">
+    <Position X="6.5" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <FileName>Question.cs</FileName>
+      <HashCode>AAABAAAAAYgAACAAAAAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Members>
+      <Field Name="boolean" Hidden="true" />
+      <Field Name="booleanInterrogatives" Hidden="true" />
+      <Field Name="interrogatives" Hidden="true" />
+    </Members>
   </Class>
   <Enum Name="Babel.ListMode">
-    <Position X="0.5" Y="6.75" Width="1.5" />
+    <Position X="3" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <FileName>Words\Noun.cs</FileName>
+      <FileName>ListMode.cs</FileName>
       <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Babel.Tense">
+    <Position X="7.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Tense.cs</FileName>
+      <HashCode>AAAAAAAAIAAAABAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
     </TypeIdentifier>
   </Enum>
 </ClassDiagram>
