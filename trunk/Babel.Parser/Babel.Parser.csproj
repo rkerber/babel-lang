@@ -79,6 +79,6 @@
   -->
   <PropertyGroup>
     <PreBuildEvent>cd $(ProjectDir)
-$(ProjectDir)\Gold\createskelprog_main Grammar\Babel.cgt Grammar\Babel.pgt BabelParserTemplate.cs</PreBuildEvent>
+"$(ProjectDir)\Gold\createskelprog_main" Grammar\Babel.cgt Grammar\Babel.pgt BabelParserTemplate.cs</PreBuildEvent>
   </PropertyGroup>
 </Project>
