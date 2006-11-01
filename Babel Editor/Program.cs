@@ -7,7 +7,7 @@ using System.Windows.Forms;
 using Babel;
 using Babel.EnglishEmitter;
 
-namespace Babel.Test
+namespace Babel.Editor
 {
 	class Program
 	{

@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 using Babel.EnglishEmitter;
 
-namespace Babel.Test
+namespace Babel.Editor
 {
     public partial class TestForm : Form
     {
@@ -38,7 +38,7 @@ namespace Babel.Test
             {
                 sourceTextBox.Text = File.ReadAllText(openFileDialog.FileName);
                 saveFileDialog.FileName = openFileDialog.FileName;
-                Text = "Babeler - " + saveFileDialog.FileName;
+                Text = "Babel Editor - " + saveFileDialog.FileName;
             }
         }
 
@@ -55,7 +55,7 @@ namespace Babel.Test
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     File.WriteAllText(saveFileDialog.FileName, sourceTextBox.Text);
-                    Text = "Babeler - " + saveFileDialog.FileName;
+                    Text = "Babel Editor - " + saveFileDialog.FileName;
                 }
             }
             else
@@ -69,7 +69,7 @@ namespace Babel.Test
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 File.WriteAllText(saveFileDialog.FileName, sourceTextBox.Text);
-                Text = "Babeler - " + saveFileDialog.FileName;
+                Text = "Babel Editor - " + saveFileDialog.FileName;
             }
         }
 

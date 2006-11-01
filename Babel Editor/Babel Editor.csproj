@@ -7,8 +7,8 @@
     <ProjectGuid>{570CA93A-2936-4229-804A-698014584024}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Babel.Test</RootNamespace>
-    <AssemblyName>Babeler</AssemblyName>
+    <RootNamespace>Babel.Editor</RootNamespace>
+    <AssemblyName>Babel Editor</AssemblyName>
     <StartupObject>
     </StartupObject>
     <ApplicationIcon>Babel.ico</ApplicationIcon>
