@@ -1,0 +1,243 @@
+<html>
+<head>
+<title>Babel: Expressive Knowledge Representation</title>
+<style type="text/css">
+pre { margin-left: 20px; border: solid 1px CCC; padding: 10px;}
+</style>
+</head>
+<body>
+
+<img src="Babel Logo.jpg" />
+
+<table width="800px"><tr><td>
+
+<h1>Important Links</h1>
+<p>
+<a href="http://babel-lang.googlecode.com/svn/trunk/Babel%20Editor/bin/Debug/TestCases.babel">Babel Examples</a>
+<br><a href="http://translator.babelproject.com">Babel To English Translator</a>
+<br><a href="http://babel-lang.googlecode.com/svn/trunk/Babel.Parser/Grammar/Babel.grm">Parser BNF (Formal Grammar Definition)</a>
+<br><a href="http://www.devincook.com/goldparser/">Gold Parser Engine</a>
+<br><a href="http://groups.google.com/group/babelproject">Babel Google Group</a>
+<br><a href="http://code.google.com/p/babel-lang/">Google Code Project Page</a>
+<br><a href="http://code.google.com/p/babel-lang/source">Babel Source Code</a>
+<br>
+<br><a href="Download/Babel - Release 1 - Source and Binaries.zip"><b>Download Source and Binaries</b></a> (Requires .Net Framework 2.0)
+</p>
+
+
+<h1>Introducing Babel</h1>
+<h2>What is Babel?</h2>
+
+<p>Babel is a knowledge representation language that aims to be as expressive as most natural language.</p>
+
+<p>Babel is modeled after the C family of computer programming languages which have syntax that provide terse, human readable and easy to write code.</p>
+
+<p>Parsing natural language is a hard problem, but it can be avoided by writing Babel.  By using this format natural language processing (NLP) can be separated from the real artificial intelligence work.</p>
+
+<p>Babel is not a representation of parsed natural language.  It is designed to represent specific meaning and does not include many of the subtleties of natural language.  Babel does not try to model natural language completely.  The aim is simply to be able to represent the meaning of most natural language.</p>
+
+<h2>Uses of Babel</h2>
+
+<p>The primary use of Babel is a format for talking to computers.  Babel could allow for an easier Turing Test to be attempted and may help move beyond the current crude chat bot designs.</p>
+
+<p>Babel could be used as a generalized goal definition system to define objectives for an intelligent agent.  It could describe problems, potential solutions and actions to be performed by an agent.</p>
+
+<p>Babel could be of use in translating between natural languages or in other areas of linguistics.  Learning and using Babel might improve your grammar since it makes you think about the structure of what you are saying.</p>
+
+<h2>Current State of Babel</h2>
+
+<p>This is the first release of Babel.  The language is capable of representing simple sentences.  More complex sentences may have to be broken into multiple sentences.  There are still many areas where the language can be expanded to make it more expressive and easier to use.</p>
+
+<p>The Babel grammar is written in a BNF variant that is used by the Gold Parsing System (see <a href=http://www.devincook.com/goldparser/>http://www.devincook.com/goldparser/</a>).  The Gold Parser compiles the grammar into tables which can then be used be loaded by an parsing engine, which have been created for a variety of different development platforms.  This will help enable the language to be used on a variety of platforms.  The reference implementation is written in C# and requires the .Net Framework 2.0 or later to run.</p>
+
+<p>Babel to English translation is not a hard problem.  Included in the project is a translator that gives a reasonably understandable equivalent in English (see <a href=http://translator.babelproject.com/>http://translator.babelproject.com/</a>). Getting the translation to a point where it could pass for human for Turing Test scenarios may be much more difficult.  The English translator is very handy for finding mistakes in Babel code and acts as a check to make sure you said what you meant to.</p>
+
+<p>A parser and the translator is built into a program imaginatively called Babel Editor.  The Babel Editor environment provides a view of the parsed result that shows how Babel is represented as objects in the reference implementation.  Great care has been taken to keep the parsed object structures simple.</p>
+
+<h2>Babel Editor Screenshot</h2>
+<p><img src=Babel-Editor-Screenshot.gif border=1 /></p>
+
+<h2>Babel Reference Implementation Class Diagram</h2>
+<p><img src=ClassDiagram.png border=1 /></p>
+
+<p>Babel was created by me, Bryan Livingston.  I also own and operate <a href=http://cooltext.com>http://cooltext.com</a>.  I'm more of a computer programmer than a linguist.  I searched long and hard for a language such as this but found none, so I created Babel over several years as a side project.</p>
+
+<p>Comments and suggestions are welcome on the mailing list at <a href=http://groups.google.com/group/babelproject>http://groups.google.com/group/babelproject</a>.  The web site for the project is at <a href=http://babelproject.com>http://babelproject.com</a>.</p>
+
+<h1>Learn Babel by Example</h1> 
+<h2>Subject Verb Object Pattern</h2>
+
+<pre>
+// Joe saw Jane. 
+Joe.see-(Jane); 
+</pre>
+
+<p>Babel is composed of sentences.  Each sentence ends with a semi-colon.  The "//" mark indicates a line comment, which means that the text following it will be ignored by the parser.  Whitespace is ignored by the parser which means that you could put spaces or line breaks anywhere and it will still parse the same.</p>
+
+<p>Sentences follow a Subject-Verb-Object pattern.  The subject of the sentence is usually first.  This is followed by a dot to separate the verb.  Then the object of the sentence is enclosed in parenthesis.  This follows a C++, C# or Java pattern of object.method(argument).</p>
+
+<p>In natural language we use morphology to change the sound and spelling of words to indicate things like plurals and tensing .  In Babel this information is pulled out of the words and added as special characters.  The past tensing of the verb "saw" in the example is done with a minus sign attached in a suffix like manner.    A plus sign is used for future tense words and if no suffix is present then present tense is assumed for the verb.</p>
+
+<p>Nouns are always capitalized.  Currently there is no way to indicate that a noun a proper noun.  In spoken English this is specified by the absence of an article (e.g.  "the", "a" or "an".)</p>
+
+<h2>Implicit Subjects and Sentence as an Object</h2>
+
+<pre>
+// See Jane run.
+You.see(Jane.run()); 
+see(Jane.run()); 
+</pre>
+
+<p>Whenever the initial subject is left off, an implicit noun "You" is used as the subject.  The above sentences are logical equivalents.  In English we often drop and make implicit the subject of a sentence when it is the person we are speaking to. </p>
+
+<p>The object of the sentence is another sentence.  The object of a sentence can be empty, a noun, a set of nouns, another sentence, or just an adjective.  Unlike computer programming languages there is max of only one object of a sentence.  Information that you would think would be used for multiple arguments would probably be attached directly to the verb as a prepositional phrase.</p>
+
+<h2>Adjectives and Adverbs</h2>
+
+<pre>
+// The tall man walked slowly.
+Man tall.walk- slow();
+</pre>
+
+<p>In this sentence the adjective "tall" is attached to the noun "Man" and adverb "slow" is attached to the verb "Walk".</p>
+
+<p>The suffix "-ly" is dropped from “slowly”.  When English is spoken the suffix is used to indicate that it's an adverb, but in Babel that is made explicit by the formatting.</p>
+
+<p>There is no object of this particular sentence so the parentheses are left empty.</p>
+
+
+<h2>Prepositional Phrases and Restrictive Clauses</h2>
+
+<pre>
+// The quick brown fox jumped over the lazy dog.
+Fox quick brown.jump- over[Dog lazy]();
+
+// The horse that I rode died.
+Horse that[I.ride-()].die-();
+</pre>
+
+<p>The prepositional phrase "over the lazy dog" is attached to the verb "jump".  Prepositions are attached as if they were adverbs followed by the object of the proposition contained in square brackets.</p>
+
+<p>Restrictive clauses are handled much like a prepositional phrase, but they are instead attached to a noun.</p>
+
+<p>In the reference implementation when these prepositional phrases and restrictive clauses are parsed they are created as adverb and adjective objects but have the contents of the brackets attached.</p>
+
+
+<h2>Declarations</h2>
+
+<pre>
+// Joe is tall.
+Joe.is(tall);
+Joe.tall;
+
+// Joe was tall.
+Joe.is-(tall);
+
+// Joe is a human.
+Joe.Human;
+</pre>
+
+<p>The top two statements are logically identical.  When the verb is left off the verb is assumed to be “is”.</p>
+
+<p>Unfortunately there is no shorthand for was, so in order to express the past tense you have to explicitly use the “is” verb with a past tense suffix.</p>
+
+<p>When the object in a declaration is a noun then the sentence is saying that the subject is a subclass of the object.</p>
+
+<h2>Noun Sets</h2>
+
+<pre>
+// Tashonda sent e-mail, cards, and letters.
+Tashonda.send-(Email & Card* & Letter*);
+
+// Tashonda sent e-mail, cards, or letters.
+Tashonda.send-(Email | Card* | Letter*);
+
+// Mrs. Doubtfire gave Tabitha and Samantha quizzes.
+MrsDoubtfire.give- to[Tabitha & Samantha](Quiz*);
+
+// Juanita and Celso worked hard.
+Juanita & Celso.work- hard();
+</pre>
+
+<p>Anywhere that a noun can be used a set of nouns can be used instead.  Simply chain them together with ampersands for an and set and using pipes for or set.   You can not mix and and or in a single set.</p>
+
+<p>Also note that the asterisk is used as a suffix to specify a plural.</p>
+
+
+<h2>Gerunds</h2>
+
+<pre>
+// I love running.
+I.love(Run=);
+
+// Charles is working in the garden. 
+Charles.Work= in[Garden];
+</pre>
+
+<p>A gerund is a noun that is built from a verb by attaching an “-ing” suffix.  Note that the gerund words are capitalized since they are nouns.</p>
+
+<p>The “-ing” suffix is also attached to present tense participles, which are verbs that are used as adjectives, but there is no support in Babel yet for participles.</p>
+
+<h2>Questions</h2>
+
+<pre>
+// Where are you going?
+where(You.are(Go=));
+
+// What were you reading this morning?
+what(You.read- this[Morning]());
+
+// May I postpone this assignment?
+may(I.postpone(Assignment));
+
+// Is Joe tall?
+is tall(Joe);
+
+// Where is Joe?
+where(Joe);
+
+// What is the color of horse that I am riding?
+what color(Horse that[I.is-(Ride=)]);
+</pre>
+
+<p>Questions are written with the interrogative word as a verb.</p>
+
+<p>Questions usually use an implicit subject, so a subject of “You” is attached to the question when parsed.  Asking a question is technically giving an order since an answer is being demanded.</p>
+
+<p>Currently the parser is hard coded to recognize specific interrogatives.  This is less than ideal since it makes the parser English specific and in the future a symbol may be introduced to indicate that a statement is a question.</p>
+
+<h1>Babel Limitations</h1>
+
+<p>Babel is very much a work in progress.  Below are some of the areas that may be improved upon.</p>
+
+<h2>Conjunctions</h2>
+<p>Most conjunctions are not currently available in the language.  Complex sentences can not easily be expressed without them.</p>
+
+<h2>Articles</h2>
+<p>The language does not support articles (a, an, and the) right now.  In natural language these are used to indicate that a noun is proper.  It's questionable whether this information is important enough be included in the language.</p>
+
+<p>If support for articles was added it might take the form of adding an underscore before or after the noun.  Or the articles could be added as adjectives, something which could be done right now.</p>
+
+<h2>Questions</h2>
+<p>Currently the parser is hard coded to recognize specific interrogatives.  This is less than ideal since it makes the parser English specific and in the future a symbol may be introduced to indicate that a statement is a question.</p>
+
+<h2>Modifiers</h2>
+
+<p>Words that modify an adjective or adverb (e.g. very, slightly, rather, quite) can not be expressed properly.  For instance, it is not really possible to say "the very black dog" since the modifier "very" needs to be attached to the adjective "black" and not the noun "dog".</p>
+
+<p>Negatives (e.g. The dog that is not running.) would also need to be attached as a modifier.</p>
+
+<h2>Babel Emitter</h2>
+<p>If computers are going to be working with Babel they will need to be able to generate it in object form and then save it as written Babel code.  This is not a seriously difficult task and will be part of the reference implementation someday.</p>
+
+</td></tr></table>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-74613-7";
+urchinTracker();
+</script>
+
+</body>
+</html>
