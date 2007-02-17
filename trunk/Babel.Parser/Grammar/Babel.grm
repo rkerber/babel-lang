@@ -1,7 +1,7 @@
 "Name"    = 'Babel' 
 "Version" = '1'
 "Author"  = 'Bryan Livingston' 
-"About"   = 'Babel is a formal grammar for representing thoughts and the meaning of human languages.'
+"About"   = 'Babel is language for talking with computers.'
 
 "Case Sensitive" = True
 "Start Symbol"   = <Sentance Set>

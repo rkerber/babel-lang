@@ -15,5 +15,10 @@ namespace Babel
             get { return verb; }
             set { verb = value; }
         }
+
+        public abstract bool IsQuestion
+        {
+            get;
+        }
 	}
 }

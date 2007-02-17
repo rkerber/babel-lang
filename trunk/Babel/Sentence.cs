@@ -7,5 +7,10 @@ namespace Babel
 		public Sentence(Verb verbPhrase) : base(verbPhrase)
 		{
 		}
+
+        public override bool IsQuestion
+        {
+            get { return false; }
+        }
     }
 }
