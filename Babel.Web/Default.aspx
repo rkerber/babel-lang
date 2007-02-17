@@ -10,7 +10,7 @@
     <form id="form1" runat="server">
     <div>
         <h2>
-            Enter the Babel text to be translated to English (<a href="http://babel-lang.googlecode.com/svn/trunk/Babeler/bin/Debug/TestCases.babel">examples</a>)<br />
+            Enter the Babel text to be translated to English (<a href="http://babel-lang.googlecode.com/svn/trunk/Babel%20Editor/bin/Debug/TestCases.babel">examples</a>)<br />
             <asp:TextBox ID="SourceTextBox" runat="server" Height="266px" Rows="100" Width="576px" TextMode="MultiLine">// The quick brown fox jumped over the lazy dog.
 Fox quick brown.jump- over[Dog lazy]();</asp:TextBox>
             <br />

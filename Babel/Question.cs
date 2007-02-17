@@ -10,6 +10,11 @@ namespace Babel
             boolean = IsInterrogative(verbPhrase.Text);
 		}
 
+        public override bool IsQuestion
+        {
+            get { return true; }
+        }
+
         private bool boolean;
         public bool Boolean
         {
