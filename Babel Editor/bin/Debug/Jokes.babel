@@ -1,0 +1,39 @@
+// If girls with big boobs work at Hooters, where do girls with one leg work?
+Girl* with[Boob* big].work at[Hooter*]();
+where(Girl* with[Leg one].work());
+// IHOP
+Girl* with[Leg one].work at[Ihop]();
+
+
+// Why do chicken coups have two doors?
+why(Coup* chicken.have(Door* two));
+// Because if they had four doors they'd be chicken sedans.
+Coup* chicken with[Door* four].call-(Sedan* chicken);
+
+
+// What's the difference between brocolli and boogers?
+what difference of[Brocolli* & Booger*]();
+// Kids won't eat Brocolli.
+Kid*.eat not(Brocolli*);
+
+
+// Knock Knock
+You.hear(Knock & Knock);
+// Who's there?
+who();
+// Recursion
+I.Recursion;
+// Recursion who?
+who(Recursion);
+// Knock Knock
+You.hear(Knock & Knock);
+// Who's there?
+who();
+// Recursion
+I.Recursion;
+
+
+// Why'd the chicken cross the road?
+why(Chicken.cross-(Road));
+// To get to the other side.
+Chicken.cross- to[Chicken.be(Side of[Road] other)] (Road);

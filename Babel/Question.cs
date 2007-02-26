@@ -7,7 +7,7 @@ namespace Babel
 	{
         public Question(Verb verbPhrase) : base(verbPhrase)
 		{
-            boolean = IsInterrogative(verbPhrase.Text);
+            boolean = IsBooleanInterrogative(verbPhrase.Text);
 		}
 
         public override bool IsQuestion

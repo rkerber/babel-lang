@@ -6,5 +6,18 @@ namespace ChatterBot
 {
     public class Log : List<LogEntry>
     {
+        public LogEntry LastReceived
+        {
+            get
+            {
+                for (int count = Count - 1; count >= 0; count--)
+                {
+                    LogEntry entry = this[count];
+                    if (!entry.SourceSelf)
+                        return entry;
+                }
+                return null;
+            }            
+        }
     }
 }
