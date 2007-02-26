@@ -14,9 +14,6 @@ namespace ChatterBot
 
         public string Act()
         {
-            LastActed = DateTime.Now;
-            //return String.Empty;
-
             // if nothing has changed in log then do nothing
 
             // if question then try to answer
@@ -35,8 +32,18 @@ namespace ChatterBot
 
             // do nothing
 
-            string result = "I.agree();";
+            string result;
+            if (Log.LastReceived.IsQuestion)
+            {
+                result = "I.know not();";
+            }
+            else
+            {
+                result = "I.agree();";
+            }
             Log.Add(new LogEntry("Self", result));
+
+            LastActed = DateTime.Now;
             return result;
         }
 
@@ -61,41 +68,6 @@ namespace ChatterBot
              */
 
             return null;
-        }
-
-        public void Initialize()
-        {
-            Option option = new StaticOption(String.Empty);
-            option.Name = "Do nothing.";
-            OptionList.Add(option);
-
-            option = new StaticOption("what.Name of[You]();");
-            option.Name = "Ask for name";
-            OptionList.Add(option);
-
-            option = new StaticOption("I.do not(Understand);");
-            option.Name = "Do not understand";
-            OptionList.Add(option);
-
-            option = new StaticOption("I.greet(You);");
-            option.Name = "Greet";
-            OptionList.Add(option);
-
-            option = new StaticOption("I.agree();");
-            option.Name = "Yes";
-            OptionList.Add(option);
-
-            option = new StaticOption("I.agree not();");
-            option.Name = "No";
-            OptionList.Add(option);
-
-            option = new StaticOption("I.do not(Know);");
-            option.Name = "Do not Know";
-            OptionList.Add(option);
-
-            option = new StaticOption("I.agree maybe();");
-            option.Name = "Maybe";
-            OptionList.Add(option);
         }
     }
 }
