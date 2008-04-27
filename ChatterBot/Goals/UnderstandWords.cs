@@ -6,9 +6,9 @@ namespace ChatterBot.Goals
 {
     class UnderstandWords: Goal
     {
-        public override string Act()
+		public override string Act(Context context)
         {
-//            Completed = true;
+            IsCompleted = true;
             return "I.do not(Understand);"; // I do not understand
         }
     }

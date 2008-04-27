@@ -6,9 +6,9 @@ namespace ChatterBot.Goals
 {
     class AnswerQuestion: Goal
     {
-        public override string Act()
+		public override string Act(Context context)
         {
-            Completed = true;
+            IsCompleted = true;
             return "I.know not();";
         }
 

@@ -1,13 +1,14 @@
-Microsoft Visual Studio Solution File, Format Version 9.00
-# Visual Studio 2005
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Babel", "Babel\Babel.csproj", "{00BDB545-CC5C-45A7-80FB-3E92611FD8AA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Babel.EnglishEmitter", "Babel.EnglishEmitter\Babel.EnglishEmitter.csproj", "{D668DC32-92EB-4765-9A33-A807F212C8AD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Babel.Parser", "Babel.Parser\Babel.Parser.csproj", "{533476A0-BC23-4764-A476-8ABF8484588F}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "C:\...\Babel.Web\", "Babel.Web\", "{2D1B4B7B-A61C-4E41-8DA8-F0CC370A0DE9}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Babel.Web", "Babel.Web\", "{2D1B4B7B-A61C-4E41-8DA8-F0CC370A0DE9}"
 	ProjectSection(WebsiteProperties) = preProject
+		TargetFramework = "3.5"
 		ProjectReferences = "{00BDB545-CC5C-45A7-80FB-3E92611FD8AA}|Parser.dll;{D668DC32-92EB-4765-9A33-A807F212C8AD}|Babel.EnglishEmitter.dll;{533476A0-BC23-4764-A476-8ABF8484588F}|Babel.Parser.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/Babel.Web"
 		Debug.AspNetCompiler.PhysicalPath = "Babel.Web\"
