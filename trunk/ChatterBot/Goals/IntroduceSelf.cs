@@ -6,9 +6,9 @@ namespace ChatterBot.Goals
 {
     class IntroduceSelf: Goal
     {
-        public override string Act()
+		public override string Act(Context context)
         {
-            Completed = true;
+            IsCompleted = true;
             return "Name of[I].Computer";
         }
     }

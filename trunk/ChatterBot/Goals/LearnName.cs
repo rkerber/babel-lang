@@ -8,13 +8,15 @@ namespace ChatterBot.Goals
     {
         bool nameAsked;
 
-        public override string Act()
+		public override string Act(Context context)
         {
             if (!nameAsked)
             {
                 nameAsked = true;
                 return "what name of[You]();";
             }
+
+			IsCompleted = true;
             return null;
         }
     }

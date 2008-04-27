@@ -8,13 +8,13 @@ namespace ChatterBot.Goals
     {
         public double Priority;
 
-        public bool Completed;
+        public bool IsCompleted;
         public DateTime Started;
         public DateTime Finished;
         public DateTime LastActed;
 
         public Log Related;
 
-        public abstract string Act();
+        public abstract string Act(Context context);
     }
 }

@@ -1,73 +1,124 @@
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Text;
+
+using ChatterBot.Goals;
 
 namespace ChatterBot
 {
-    class ChatEngine
-    {
-        public Log Log = new Log();
-        public OptionList OptionList = new OptionList();
-        public DateTime LastActed;
+	class ChatEngine
+	{
+		public Log Log = new Log();
+		public OptionList OptionList = new OptionList();
+		public DateTime LastActed;
 
-        public ConversationState State;
+		public ConversationState State;
 
-        public string Act()
-        {
-            // if nothing has changed in log then do nothing
+		List<Type> GoalTypes = new List<Type>();
+		List<Goal> Goals = new List<Goal>();
 
-            // if question then try to answer
+		Goal current;
+		Random random = new Random();
 
-            // if statement was made then acknowlege or ask a question
+		public ChatEngine()
+		{
+			Initalize();
+		}
 
-            // if given order then acknowledge and try to execute (add to goals?)
+		public void Initalize()
+		{
+			RegisterGoals(Assembly.GetExecutingAssembly());
+		}
 
-            // if greet and not already greeted then greet
+		void RegisterGoals(Assembly assembly)
+		{
+			foreach (Type t in assembly.GetTypes())
+			{
+				if (t.IsSubclassOf(typeof(Goal)))
+				{
+					GoalTypes.Add(t);
+				}
+			}
+		}
 
-            // if name unknown ask name
+		void CreateGoal(Type type)
+		{
+			ConstructorInfo constructor = type.GetConstructor(new Type[] { });
+			if (constructor != null)
+			{
+				Goal goal = (Goal)constructor.Invoke(new object[] { });
+				Goals.Add(goal);
+			}
+		}
 
-            // ask about something interesting
+		void UpdateGoal()
+		{
+			if (current != null && current.IsCompleted)
+			{
+				Goals.Remove(current);
+				current = null;
+			}
 
-            // tell a story
+			if (current == null)
+			{
+				if (Goals.Count > 0)
+				{
+					current = Goals[random.Next(Goals.Count)];
+					Console.WriteLine("Current Goal: " + current.GetType().Name);
+				}
+				else
+					CreateGoal(GoalTypes[random.Next(GoalTypes.Count)]);
+			}
+		}
 
-            // do nothing
+		public string Act()
+		{
+			UpdateGoal();
 
-            string result;
-            if (Log.LastReceived.IsQuestion)
-            {
-                result = "I.know not();";
-            }
-            else
-            {
-                result = "I.agree();";
-            }
-            Log.Add(new LogEntry("Self", result));
+			string result = null;
+			if (current != null)
+			{
+				result = current.Act(null);
 
-            LastActed = DateTime.Now;
-            return result;
-        }
+				// if nothing has changed in log then do nothing
 
-        public void Sense(string message, string source)
-        {
-            Log.Add(new LogEntry(source, message));
-        }
+				// if question then try to answer
 
-        public System.Collections.Generic.List<ConversationState> EvaluateStates(string source)
-        {
-            /* 
-             * expire/age old state settings (ie, offended, insulted, entertained)
-             * 
-             * keep track of last time state was updated
-             * get message received since last update
-             * 
-             * search messages for indicators
-             * 
-             * attach/update state settings with new information
-             * 
-             * attach messages as reasons for indicators (for diagnostics and future state decisions evaluation)
-             */
+				// if statement was made then acknowlege or ask a question
 
-            return null;
-        }
-    }
+				// if given order then acknowledge and try to execute (add to goals?)
+
+				// if greet and not already greeted then greet
+
+				// if name unknown ask name
+
+				// ask about something interesting
+
+				// tell a story
+
+				// do nothing
+
+				//if (Log.LastReceived.IsQuestion)
+				//{
+				//    result = "I.know not();";
+				//}
+				//else
+				//{
+				//    result = "I.agree();";
+				//}
+
+				if (result != null)
+					Log.Add(new LogEntry("Self", result));
+			}
+
+			LastActed = DateTime.Now;
+			return result;
+		}
+
+		public void Sense(string message, string source)
+		{
+			Log.Add(new LogEntry(source, message));
+		}
+	}
 }
