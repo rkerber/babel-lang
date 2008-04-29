@@ -13,7 +13,7 @@ namespace ChatterBot
                 for (int count = Count - 1; count >= 0; count--)
                 {
                     LogEntry entry = this[count];
-                    if (!entry.SourceSelf)
+                    if (!entry.IsSourceSelf)
                         return entry;
                 }
                 return null;

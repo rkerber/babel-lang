@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="ChatEngine.cs" />
     <Compile Include="Context.cs" />
+    <Compile Include="Source.cs" />
     <Compile Include="Goals\AnswerQuestion.cs" />
     <Compile Include="Goals\TellJoke.cs" />
     <Compile Include="Goals\Greet.cs" />
@@ -74,8 +75,6 @@
     <Compile Include="Log.cs" />
     <Compile Include="LogEntry.cs" />
     <Compile Include="ConversationState.cs" />
-    <Compile Include="Option.cs" />
-    <Compile Include="OptionList.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -98,7 +97,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="StaticOption.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Babel.EnglishEmitter\Babel.EnglishEmitter.csproj">

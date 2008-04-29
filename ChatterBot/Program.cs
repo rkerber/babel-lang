@@ -38,7 +38,7 @@ namespace ChatterBot
 					if (parse.Successfull)
 					{
 						Console.WriteLine(">>> {0} ({1})", input, Babel.EnglishEmitter.EnglishEmitter.ToEnglish(parse).Trim());
-						engine.Sense(input, "Chat Client");
+						engine.Sense(input, Source.Client);
 					}
 				}
 
