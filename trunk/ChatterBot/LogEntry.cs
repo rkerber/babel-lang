@@ -9,21 +9,21 @@ namespace ChatterBot
     public class LogEntry
     {
         public DateTime Timestamp;
-        public string Source;
+        public Source Source;
         public string Message;
 
         static Parser parser = new Babel.Parser();
 
-        public LogEntry(string source, string message)
+        public LogEntry(Source source, string message)
         {
             Timestamp = DateTime.Now;
             Source = source;
             Message = message;
         }
 
-        public bool SourceSelf
+        public bool IsSourceSelf
         {
-            get { return Source == "Self"; }
+            get { return Source == Source.Self; }
         }
 
         Statement parsed;

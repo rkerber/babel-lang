@@ -6,7 +6,7 @@ namespace ChatterBot
 {
 	public class Context
 	{
-		public Log Log;
+		public Log Log = new Log();
 
 		public ConversationState State;
 
@@ -32,7 +32,7 @@ namespace ChatterBot
 		{
 			var last = Log.LastReceived;
 			
-			if (!last.SourceSelf)
+			if (!last.IsSourceSelf)
 			{
 				if (last.Message == "I.agree();")
 				{

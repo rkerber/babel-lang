@@ -8,13 +8,33 @@ namespace ChatterBot.Goals
     {
         public double Priority;
 
-        public bool IsCompleted;
-        public DateTime Started;
-        public DateTime Finished;
+		bool isCompleted;
+        public bool IsCompleted
+		{
+			get { return isCompleted; }
+			set
+			{
+				isCompleted = value;
+				if (isCompleted)
+					Completed = DateTime.Now;
+			}
+		}
+
+		public DateTime Started;
+        public DateTime Completed;
         public DateTime LastActed;
 
         public Log Related;
 
-        public abstract string Act(Context context);
+		public Goal()
+		{
+			Started = DateTime.Now;
+		}
+
+        public virtual string Act(Context context)
+		{
+			LastActed = DateTime.Now;
+			return null;
+		}
     }
 }

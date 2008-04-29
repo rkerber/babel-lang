@@ -9,11 +9,8 @@ namespace ChatterBot
 {
 	class ChatEngine
 	{
-		public Log Log = new Log();
-		public OptionList OptionList = new OptionList();
+		public Context Context;
 		public DateTime LastActed;
-
-		public ConversationState State;
 
 		List<Type> GoalTypes = new List<Type>();
 		List<Goal> Goals = new List<Goal>();
@@ -28,6 +25,7 @@ namespace ChatterBot
 
 		public void Initalize()
 		{
+			Context = new Context();
 			RegisterGoals(Assembly.GetExecutingAssembly());
 		}
 
@@ -52,6 +50,18 @@ namespace ChatterBot
 			}
 		}
 
+		double EvaluateGoal(Type type)
+		{
+			var method = type.GetMethod("Evaluate");
+			
+			if (method != null && method.IsStatic)
+			{
+				return (double)method.Invoke(null, new object[] {Context});
+			}
+
+			return 0;
+		}
+
 		void UpdateGoal()
 		{
 			if (current != null && current.IsCompleted)
@@ -68,7 +78,13 @@ namespace ChatterBot
 					Console.WriteLine("Current Goal: " + current.GetType().Name);
 				}
 				else
-					CreateGoal(GoalTypes[random.Next(GoalTypes.Count)]);
+				{
+					foreach (var goalType in GoalTypes)
+					{
+						if (EvaluateGoal(goalType) > 0)
+							CreateGoal(goalType);
+					}
+				}
 			}
 		}
 
@@ -109,16 +125,16 @@ namespace ChatterBot
 				//}
 
 				if (result != null)
-					Log.Add(new LogEntry("Self", result));
+					Context.Log.Add(new LogEntry(Source.Self, result));
 			}
 
 			LastActed = DateTime.Now;
 			return result;
 		}
 
-		public void Sense(string message, string source)
+		public void Sense(string message, Source source)
 		{
-			Log.Add(new LogEntry(source, message));
+			Context.Log.Add(new LogEntry(source, message));
 		}
 	}
 }
